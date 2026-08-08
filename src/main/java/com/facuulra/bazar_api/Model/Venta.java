@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter @Setter
@@ -26,7 +27,7 @@ public class Venta {
             joinColumns = @JoinColumn(name = "codigo_venta"),
             inverseJoinColumns = @JoinColumn(name = "codigo_producto")
     )
-    private List<Producto> listaProductos;
+    private List<Producto> listaProductos = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name = "id_cliente")

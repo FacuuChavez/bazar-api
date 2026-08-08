@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter @Setter
@@ -20,7 +21,7 @@ public class Cliente {
     private String dni;
 
     @OneToMany(mappedBy = "unCliente")
-    private List<Venta> listaVentas;
+    private List<Venta> listaVentas = new ArrayList<>();
 
 
 }
