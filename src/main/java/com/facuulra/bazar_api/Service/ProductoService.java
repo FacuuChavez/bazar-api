@@ -26,6 +26,12 @@ public class ProductoService implements  IProductoService {
     }
 
     @Override
+    public List<Producto> traerProductosCantidadMenosDe5() {
+        List<Producto> listaProductos = prodRepo.findAll().stream().filter(producto -> producto.getCantidad_disponible() < 5).toList();
+        return listaProductos;
+    }
+
+    @Override
     public Producto crearProducto(Producto producto) {
         prodRepo.save(producto);
         return producto;

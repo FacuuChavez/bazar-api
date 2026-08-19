@@ -10,6 +10,8 @@ public interface IProductoService {
 
     public Producto traerProductoById(Long id);
 
+    public List<Producto> traerProductosCantidadMenosDe5();
+
     public Producto crearProducto(Producto producto);
 
     public void borrarProducto(Long id);

@@ -26,6 +26,11 @@ public class ProductoController {
         return ResponseEntity.ok(prodServ.traerProductoById(codigo_producto));
     }
 
+    @GetMapping("/falta_stock")
+    public ResponseEntity<List<Producto>> traerProductosMenosDe5(){
+        return ResponseEntity.ok(prodServ.traerProductosCantidadMenosDe5());
+    }
+
     @PostMapping("/crear")
     public ResponseEntity<Producto> crearProducto(@RequestBody Producto producto){
         return ResponseEntity.status(HttpStatus.CREATED).body(prodServ.crearProducto(producto));
